@@ -58,3 +58,18 @@ E:\2º DS\DS - Desenvolvimento de sistemas\Aula - 03\Aula03Colecoes\obj\Debug\ne
 E:\2º DS\DS - Desenvolvimento de sistemas\Aula - 03\Aula03Colecoes\obj\Debug\net7.0\Aula03Colecoes.pdb
 E:\2º DS\DS - Desenvolvimento de sistemas\Aula - 03\Aula03Colecoes\obj\Debug\net7.0\Aula03Colecoes.genruntimeconfig.cache
 E:\2º DS\DS - Desenvolvimento de sistemas\Aula - 03\Aula03Colecoes\obj\Debug\net7.0\ref\Aula03Colecoes.dll
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\bin\Debug\net7.0\Aula03Colecoes.exe
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\bin\Debug\net7.0\Aula03Colecoes.deps.json
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\bin\Debug\net7.0\Aula03Colecoes.runtimeconfig.json
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\bin\Debug\net7.0\Aula03Colecoes.dll
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\bin\Debug\net7.0\Aula03Colecoes.pdb
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\obj\Debug\net7.0\Aula03Colecoes.csproj.AssemblyReference.cache
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\obj\Debug\net7.0\Aula03Colecoes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\obj\Debug\net7.0\Aula03Colecoes.AssemblyInfoInputs.cache
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\obj\Debug\net7.0\Aula03Colecoes.AssemblyInfo.cs
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\obj\Debug\net7.0\Aula03Colecoes.csproj.CoreCompileInputs.cache
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\obj\Debug\net7.0\Aula03Colecoes.dll
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\obj\Debug\net7.0\refint\Aula03Colecoes.dll
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\obj\Debug\net7.0\Aula03Colecoes.pdb
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\obj\Debug\net7.0\Aula03Colecoes.genruntimeconfig.cache
+C:\Users\eduar\OneDrive\Área de Trabalho\AreadeTrabalho\git (Att)\DS_Colecoes\obj\Debug\net7.0\ref\Aula03Colecoes.dll

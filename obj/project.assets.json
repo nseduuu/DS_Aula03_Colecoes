@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\2º DS\\DS - Desenvolvimento de sistemas\\Aula - 03\\Aula03Colecoes\\Aula03Colecoes.csproj",
+      "projectUniqueName": "C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\AreadeTrabalho\\git (Att)\\DS_Colecoes\\Aula03Colecoes.csproj",
       "projectName": "Aula03Colecoes",
-      "projectPath": "F:\\2º DS\\DS - Desenvolvimento de sistemas\\Aula - 03\\Aula03Colecoes\\Aula03Colecoes.csproj",
+      "projectPath": "C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\AreadeTrabalho\\git (Att)\\DS_Colecoes\\Aula03Colecoes.csproj",
       "packagesPath": "C:\\Users\\eduar\\.nuget\\packages\\",
-      "outputPath": "F:\\2º DS\\DS - Desenvolvimento de sistemas\\Aula - 03\\Aula03Colecoes\\obj\\",
+      "outputPath": "C:\\Users\\eduar\\OneDrive\\Área de Trabalho\\AreadeTrabalho\\git (Att)\\DS_Colecoes\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -8,9 +8,9 @@ namespace Aula03Colecoes
     {
         static void Main(string[] args)
         {
-                CriarLista();
-                ExibirLista();
-                ExemplosListasColecoes();
+            CriarLista();
+            ExibirLista();
+            ExemplosListasColecoes();
         }
 
         private const int V = 5;
@@ -26,8 +26,8 @@ namespace Aula03Colecoes
             Console.WriteLine("==================================================");
             CriarLista();
             int opcaoEscolhida = 0;
-                do
-                {
+            do
+            {
                 Console.WriteLine("==================================================");
                 Console.WriteLine("---Digite o número referente a opção desejada: ---");
                 Console.WriteLine("1 - Obter por ID 1");
@@ -43,145 +43,148 @@ namespace Aula03Colecoes
                 Console.WriteLine("==================================================");
                 Console.WriteLine("-----Ou tecle qualquer outro número para sair-----");
                 Console.WriteLine("==================================================");
-                
+
                 opcaoEscolhida = int.Parse(Console.ReadLine());
                 string mensagem = string.Empty;
-                    switch (opcaoEscolhida)
-                    {
-                        case 1:
-                            ObterPorId();
-                            break;
-                        case 2:
-                            AdicionarFuncionario();
-                            break;
-                        case 3:
-                            Console.WriteLine("Digite o ID do funcionário que você deseja buscar: ");
-                            int id = int.Parse(Console.ReadLine());
-                            ObterPorId(id);
-                            break;
-                        case 4:
-                            Console.WriteLine("Digite o salário para obter todos acima do valor indicado: ");
-                            decimal salario = decimal.Parse(Console.ReadLine());
-                            ObterPorSalario(salario);
-                            break;
-                        case 5:
-                            BuscarPorNomeAproximado();
-                            break;
-                        case 6:
-                            ObterFuncionariosRecentes();
-                            break;
-                        case 7:
-                            ObterEstatisticas();
-                            break;
-                        case 8:
-                            
-                            break;
-                        case 9:
-                            
-                            break;
-                        case 10:
-                            ObterPortipo();
-                            break;
-                        default:
-                            Console.WriteLine("Saindo do sistema....");
-                            break;
-                    }
-                } while (opcaoEscolhida >= 1 && opcaoEscolhida <= 10);
-                Console.WriteLine("==================================================");
-                Console.WriteLine("* Obrigado por utilizar o sistema e volte sempre *");
-                Console.WriteLine("==================================================");
-            }
+                switch (opcaoEscolhida)
+                {
+                    case 1:
+                        ObterPorId();
+                        break;
+                    case 2:
+                        AdicionarFuncionario();
+                        break;
+                    case 3:
+                        Console.WriteLine("Digite o ID do funcionário que você deseja buscar: ");
+                        int id = int.Parse(Console.ReadLine());
+                        ObterPorId(id);
+                        break;
+                    case 4:
+                        Console.WriteLine("Digite o salário para obter todos acima do valor indicado: ");
+                        decimal salario = decimal.Parse(Console.ReadLine());
+                        ObterPorSalario(salario);
+                        break;
+                    case 5:
+                        BuscarPorNomeAproximado();
+                        break;
+                    case 6:
+                        ObterFuncionariosRecentes();
+                        break;
+                    case 7:
+                        ObterEstatisticas();
+                        break;
+                    case 8:
 
-            //BUSCA ID 1
-            public static void ObterPorId()
-            {
+                        break;
+                    case 9:
+
+                        break;
+                    case 10:
+                        ObterPortipo();
+                        break;
+                    default:
+                        Console.WriteLine("Saindo do sistema....");
+                        break;
+                }
+            } while (opcaoEscolhida >= 1 && opcaoEscolhida <= 10);
+            Console.WriteLine("==================================================");
+            Console.WriteLine("* Obrigado por utilizar o sistema e volte sempre *");
+            Console.WriteLine("==================================================");
+        }
+
+        //BUSCA ID 1
+        public static void ObterPorId()
+        {
             lista = lista.FindAll(x => x.Id == 1);
             ExibirLista();
-            }
+        }
 
-            //NOVO FUNCIONARIO
-            public static void AdicionarFuncionario()
+        //NOVO FUNCIONARIO
+        public static void AdicionarFuncionario()
+        {
+            Funcionario f = new Funcionario();
+
+            Console.WriteLine("Digite o nome: ");
+            string nomeDigitado = Console.ReadLine();
+            if (ValidarNome(nomeDigitado) == true)
             {
-                Funcionario f = new Funcionario();
-
-                Console.WriteLine("Digite o nome: ");
-                string nomeDigitado = Console.ReadLine();
-                if(ValidarNome(nomeDigitado) == true){
-                    f.Nome = nomeDigitado;
-                }
-                else{
-                    return;
-                }
-
-                //f.Nome = Console.ReadLine();
-
-                //Console.WriteLine("Digite o ID: ");
-                //f.Id = int.Parse(Console.ReadLine());
-
-                Console.WriteLine("Digite o salário: ");
-                decimal salarioDigitado = decimal.Parse(Console.ReadLine());
-                //f.Salario = decimal.Parse(Console.ReadLine());
-
-                Console.WriteLine("Digite a data de admissão: ");
-                DateTime admissaoDigitado = DateTime.Parse(Console.ReadLine());
-                //f.DataAdmissao = DateTime.Parse(Console.ReadLine());
-
-                if(ValidarSalarioAdmissao(salarioDigitado, admissaoDigitado)){
-                    f.Salario = salarioDigitado;
-                    f.DataAdmissao = admissaoDigitado;
-                }
-                
-                lista.Add(f);
-                ExibirLista(); 
+                f.Nome = nomeDigitado;
             }
-
-            //BUSCA ID POR PESQUISA
-            public static void ObterPorId(int id)
+            else
             {
-                Funcionario fBusca = lista.Find(x => x.Id == id);
-                Console.WriteLine($"Personagem encontrado: {fBusca.Nome}");
+                return;
             }
 
-            //FILTRA POR SALARIO
-            public static void ObterPorSalario(decimal valor)
+            //f.Nome = Console.ReadLine();
+
+            //Console.WriteLine("Digite o ID: ");
+            //f.Id = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite o salário: ");
+            decimal salarioDigitado = decimal.Parse(Console.ReadLine());
+            //f.Salario = decimal.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite a data de admissão: ");
+            DateTime admissaoDigitado = DateTime.Parse(Console.ReadLine());
+            //f.DataAdmissao = DateTime.Parse(Console.ReadLine());
+
+            if (ValidarSalarioAdmissao(salarioDigitado, admissaoDigitado))
             {
-                lista = lista.FindAll(x => x.Salario >= valor);
-                ExibirLista();
+                f.Salario = salarioDigitado;
+                f.DataAdmissao = admissaoDigitado;
             }
 
-            //ORDENANDO POR CRITERIO 
-            public static void Odernar()
-            {
-                lista = lista.OrderBy(x => x.Nome).ToList();
-                ExibirLista();
-            }
+            lista.Add(f);
+            ExibirLista();
+        }
 
-            //CONTAR ITENS DA LISTA
-            public static void ContarFuncionarios()
-            {
-                int qtd = lista.Count();
-                Console.WriteLine($"Existem {qtd} funcionarios.");
-            }
+        //BUSCA ID POR PESQUISA
+        public static void ObterPorId(int id)
+        {
+            Funcionario fBusca = lista.Find(x => x.Id == id);
+            Console.WriteLine($"Personagem encontrado: {fBusca.Nome}");
+        }
 
-            //SOMAR VALORES DA PROPRIEDADE COMUM ENTRE OBJETOS DE UMA LISTA
-            public static void SomarSalarios()
-            {
-                decimal somatorio = lista.Sum(x=> x.Salario);
-                Console.WriteLine(string.Format("A soma dos salários é {0:c2}.",somatorio));
-            }
+        //FILTRA POR SALARIO
+        public static void ObterPorSalario(decimal valor)
+        {
+            lista = lista.FindAll(x => x.Salario >= valor);
+            ExibirLista();
+        }
 
-            //EXIBIR APRENDIZES
-            public static void ExibirAprendizes()
-            {  
-            
+        //ORDENANDO POR CRITERIO 
+        public static void Odernar()
+        {
+            lista = lista.OrderBy(x => x.Nome).ToList();
+            ExibirLista();
+        }
+
+        //CONTAR ITENS DA LISTA
+        public static void ContarFuncionarios()
+        {
+            int qtd = lista.Count();
+            Console.WriteLine($"Existem {qtd} funcionarios.");
+        }
+
+        //SOMAR VALORES DA PROPRIEDADE COMUM ENTRE OBJETOS DE UMA LISTA
+        public static void SomarSalarios()
+        {
+            decimal somatorio = lista.Sum(x => x.Salario);
+            Console.WriteLine(string.Format("A soma dos salários é {0:c2}.", somatorio));
+        }
+
+        //EXIBIR APRENDIZES
+        public static void ExibirAprendizes()
+        {
+
             int qtd = lista.Count();
 
-            lista = lista.FindAll( x => x.TipoFuncionario == TipoFuncionarioEnum.Aprendiz);
+            lista = lista.FindAll(x => x.TipoFuncionario == TipoFuncionarioEnum.Aprendiz);
             Console.WriteLine($"Existem {qtd} funcionarios.");
 
-            }
+        }
 
-            // BUSCAR POR NOME APROXIMADO
+        // BUSCAR POR NOME APROXIMADO
         public static void BuscarPorNomeAproximado()
         {
             Console.WriteLine("Digite o nome do funcionário:");
@@ -201,189 +204,191 @@ namespace Aula03Colecoes
             }
         }
 
-            //REMOVER POR CPF
-            public static void BuscarPorCpfRemover()
-            {
-                Funcionario fBusca = lista.Find( x => x.Cpf == " ");
-                lista.Remove(fBusca);
-                Console.WriteLine($"Personagem removido: {fBusca.Nome} \nLista Atualizada: \n ");
+        //REMOVER POR CPF
+        public static void BuscarPorCpfRemover()
+        {
+            Funcionario fBusca = lista.Find(x => x.Cpf == " ");
+            lista.Remove(fBusca);
+            Console.WriteLine($"Personagem removido: {fBusca.Nome} \nLista Atualizada: \n ");
 
-                ExibirLista();
+            ExibirLista();
+        }
+
+        //REMOVER POR ID
+        public static void RemoverIdMenor4()
+        {
+
+            lista.RemoveAll(x => x.Id < 4);
+
+            ExibirLista();
+        }
+
+        //EXIBIR LISTA
+        public static void ExibirLista()
+        {
+            string dados = "";
+            for (int i = 0; i < lista.Count; i++)
+            {
+                dados += "===============================\n";
+                dados += string.Format("Id: {0} \n", lista[i].Id);
+                dados += string.Format("Nome: {0} \n", lista[i].Nome);
+                dados += string.Format("CPF: {0} \n", lista[i].Cpf);
+                dados += string.Format("Admissão: {0:dd/MM/yyyy} \n", lista[i].DataAdmissao);
+                dados += string.Format("Salário: {0:c2} \n", lista[i].Salario);
+                dados += string.Format("Tipo: {0} \n", lista[i].TipoFuncionario);
+                dados += "===============================\n";
+                Console.WriteLine(dados);
             }
 
-            //REMOVER POR ID
-            public static void RemoverIdMenor4()
+        }
+
+
+        // OBTER FUNCIONÁRIOS RECENTES E EXIBIR EM ORDEM DECRESCENTE DE SALÁRIO
+        public static void ObterFuncionariosRecentes()
+        {
+            // Remover funcionários com ID menor que 4
+            lista.RemoveAll(x => x.Id < 4);
+
+            // Filtrar a lista em ordem decrescente de salário
+            List<Funcionario> funcionariosOrdenadosPorSalario = lista.OrderByDescending(x => x.Salario).ToList();
+
+            Console.WriteLine("Funcionários com ID maior ou igual a 4, ordenados por salário decrescente:");
+            ExibirLista(); //funcionariosOrdenadosPorSalario
+        }
+
+        // OBTER ESTATÍSTICAS
+        public static void ObterEstatisticas()
+        {
+            int quantidadeFuncionarios = lista.Count;
+            decimal somatorioSalarios = lista.Sum(x => x.Salario);
+
+            Console.WriteLine($"Quantidade de funcionários: {quantidadeFuncionarios}");
+            Console.WriteLine($"Somatório de salários: {somatorioSalarios:c2}");
+        }
+
+
+        // VALIDAR SALÁRIO E DATA DE ADMISSÃO
+        public static bool ValidarSalarioAdmissao(decimal salarioDigitado, DateTime admissaoDigitado)
+        {
+            if (salarioDigitado <= 0 || admissaoDigitado > DateTime.Now)
             {
-
-                lista.RemoveAll( x => x.Id < 4);
-
-                ExibirLista();
+                Console.WriteLine("O salário ou a data de admissão estão com parametros errados.");
+                return false;
             }
 
-            //EXIBIR LISTA
-            public static void ExibirLista()
-            {
-                string dados = "";
-                for (int i = 0; i < lista.Count; i++)
-                {
-                    dados += "===============================\n";
-                    dados += string.Format("Id: {0} \n", lista[i].Id);
-                    dados += string.Format("Nome: {0} \n", lista[i].Nome);
-                    dados += string.Format("CPF: {0} \n", lista[i].Cpf);
-                    dados += string.Format("Admissão: {0:dd/MM/yyyy} \n", lista[i].DataAdmissao);
-                    dados += string.Format("Salário: {0:c2} \n", lista[i].Salario);
-                    dados += string.Format("Tipo: {0} \n", lista[i].TipoFuncionario);
-                    dados += "===============================\n";
-                    Console.WriteLine(dados);
-                }
+            return true;
+        }
 
+        // VALIDAR NOME
+        public static bool ValidarNome(string nomeDigitado)
+        {
+            if (nomeDigitado.Length < 2)
+            {
+                Console.WriteLine("O nome deve conter pelo menos 2 caracteres.");
+                return false;
             }
-
-
-            // OBTER FUNCIONÁRIOS RECENTES E EXIBIR EM ORDEM DECRESCENTE DE SALÁRIO
-            public static void ObterFuncionariosRecentes()
+            else
             {
-                // Remover funcionários com ID menor que 4
-                lista.RemoveAll(x => x.Id < 4);
-
-                // Filtrar a lista em ordem decrescente de salário
-                List<Funcionario> funcionariosOrdenadosPorSalario = lista.OrderByDescending(x => x.Salario).ToList();
-
-                Console.WriteLine("Funcionários com ID maior ou igual a 4, ordenados por salário decrescente:");
-                ExibirLista(); //funcionariosOrdenadosPorSalario
-            }
-
-            // OBTER ESTATÍSTICAS
-            public static void ObterEstatisticas()
-            {
-                int quantidadeFuncionarios = lista.Count;
-                decimal somatorioSalarios = lista.Sum(x => x.Salario);
-
-                Console.WriteLine($"Quantidade de funcionários: {quantidadeFuncionarios}");
-                Console.WriteLine($"Somatório de salários: {somatorioSalarios:c2}");
-            }
-
-            
-            // VALIDAR SALÁRIO E DATA DE ADMISSÃO
-            public static bool ValidarSalarioAdmissao(decimal salarioDigitado, DateTime admissaoDigitado)
-            {
-                if (salarioDigitado <= 0 || admissaoDigitado > DateTime.Now)
-                {
-                    Console.WriteLine("O salário ou a data de admissão estão com parametros errados.");
-                    return false;
-                }
-
                 return true;
             }
+        }
 
-           // VALIDAR NOME
-            public static bool ValidarNome(string nomeDigitado)
+        //FUNCIONARIOS PRÉ CRIADOS
+
+        // OBTER POR TIPO
+        public static void ObterPorTipo()
+        {
+            Console.WriteLine("Digite o número referente ao tipo de funcionário:");
+            Console.WriteLine("1 - CLT");
+            Console.WriteLine("2 - Estagiário");
+            Console.WriteLine("3 - Aprendiz");
+
+            if (Enum.TryParse<TipoFuncionarioEnum>(Console.ReadLine(), out TipoFuncionarioEnum tipo))
             {
-                if (nomeDigitado.Length < 2)
-                {
-                    Console.WriteLine("O nome deve conter pelo menos 2 caracteres.");
-                    return false;
-                }
-                else{
-                    return true;
-                }
+                List<Funcionario> funcionariosDoTipo = lista.FindAll(x => x.TipoFuncionario == tipo);
+                ExibirLista();
             }
-        
-            //FUNCIONARIOS PRÉ CRIADOS
-
-            // OBTER POR TIPO
-            // public static void ObterPorTipo()
-            // {
-            //     Console.WriteLine("Digite o número referente ao tipo de funcionário:");
-            //     Console.WriteLine("1 - CLT");
-            //     Console.WriteLine("2 - Estagiário");
-            //     Console.WriteLine("3 - Aprendiz");
-
-            //     if (Enum.TryParse<TipoFuncionarioEnum>(Console.ReadLine(), out TipoFuncionarioEnum tipo))
-            //     {
-            //         List<Funcionario> funcionariosDoTipo = lista.FindAll(x => x.TipoFuncionario == tipo);
-            //         ExibirLista(funcionariosDoTipo); 
-            //     }
-            //     else
-            //     {
-            //         Console.WriteLine("Tipo de funcionário inválido.");
-            //     }
-            // }
-
-            public static void ObterPortipo(){
-
-            
-            Console.WriteLine("1 - CLT\n 2 - Aprendiz "); 
-            int opcaoEscolhida = int.Parse(Console.ReadLine());
-
-            if (opcaoEscolhida == 1 ){
-
-                var listaFiltrada = lista.Where(x => x.TipoFuncionario == TipoFuncionarioEnum.CLT)
-                {
-                    foreach(var x in listaFiltrada);
-                } 
-
-            }   
-            
-
-            }
-
-            public static void CriarLista()
+            else
             {
-                Funcionario f1 = new Funcionario();
-                f1.Id = 1;
-                f1.Nome = "Neymar";
-                f1.Cpf = "12345678910";
-                f1.DataAdmissao = DateTime.Parse("01/01/2000");
-                f1.Salario = 100.000M;
-                f1.TipoFuncionario = TipoFuncionarioEnum.CLT;
-                lista.Add(f1);
-
-                Funcionario f2 = new Funcionario();
-                f2.Id = 2;
-                f2.Nome = "Baguete";
-                f2.Cpf = "12345678910";
-                f2.DataAdmissao = DateTime.Parse("01/01/2000");
-                f2.Salario = 100.000M;
-                f2.TipoFuncionario = TipoFuncionarioEnum.CLT;
-                lista.Add(f2);
-
-                Funcionario f3 = new Funcionario();
-                f3.Id = 3;
-                f3.Nome = "Neymar 2";
-                f3.Cpf = "12345678910";
-                f3.DataAdmissao = DateTime.Parse("01/01/2000");
-                f3.Salario = 100.000M;
-                f3.TipoFuncionario = TipoFuncionarioEnum.CLT;
-                lista.Add(f3);
-
-                Funcionario f4 = new Funcionario();
-                f4.Id = 4;
-                f4.Nome = "Neymar ama a Bruna";
-                f4.Cpf = "12345678910";
-                f4.DataAdmissao = DateTime.Parse("01/01/2000");
-                f4.Salario = 100.000M;
-                f4.TipoFuncionario = TipoFuncionarioEnum.CLT;
-                lista.Add(f4);
-
-                Funcionario f5 = new Funcionario();
-                f5.Id = 5;
-                f5.Nome = "Neymar aposentado";
-                f5.Cpf = "12345678910";
-                f5.DataAdmissao = DateTime.Parse("01/01/2000");
-                f5.Salario = 100.000M;
-                f5.TipoFuncionario = TipoFuncionarioEnum.CLT;
-                lista.Add(f5);
-
-                Funcionario f6 = new Funcionario();
-                f6.Id = 6;
-                f6.Nome = "Obrigado Aninha <3";
-                f6.Cpf = "12345678910";
-                f6.DataAdmissao = DateTime.Parse("01/01/2000");
-                f6.Salario = 100.000M;
-                f6.TipoFuncionario = TipoFuncionarioEnum.CLT;
-                lista.Add(f6);
-
+                Console.WriteLine("Tipo de funcionário inválido.");
             }
         }
+
+        public static void ObterPortipo()
+        {
+
+
+            Console.WriteLine("1 - CLT\n 2 - Aprendiz ");
+            int opcaoEscolhida = int.Parse(Console.ReadLine());
+
+            if (opcaoEscolhida == 1)
+            {
+
+                var listaFiltrada = lista.Where(x => x.TipoFuncionario == TipoFuncionarioEnum.CLT);
+                foreach (var x in listaFiltrada) ;
+
+
+            }
+
+
+        }
+
+        public static void CriarLista()
+        {
+            Funcionario f1 = new Funcionario();
+            f1.Id = 1;
+            f1.Nome = "Neymar";
+            f1.Cpf = "12345678910";
+            f1.DataAdmissao = DateTime.Parse("01/01/2000");
+            f1.Salario = 100.000M;
+            f1.TipoFuncionario = TipoFuncionarioEnum.CLT;
+            lista.Add(f1);
+
+            Funcionario f2 = new Funcionario();
+            f2.Id = 2;
+            f2.Nome = "Baguete";
+            f2.Cpf = "12345678910";
+            f2.DataAdmissao = DateTime.Parse("01/01/2000");
+            f2.Salario = 100.000M;
+            f2.TipoFuncionario = TipoFuncionarioEnum.CLT;
+            lista.Add(f2);
+
+            Funcionario f3 = new Funcionario();
+            f3.Id = 3;
+            f3.Nome = "Neymar 2";
+            f3.Cpf = "12345678910";
+            f3.DataAdmissao = DateTime.Parse("01/01/2000");
+            f3.Salario = 100.000M;
+            f3.TipoFuncionario = TipoFuncionarioEnum.CLT;
+            lista.Add(f3);
+
+            Funcionario f4 = new Funcionario();
+            f4.Id = 4;
+            f4.Nome = "Neymar ama a Bruna";
+            f4.Cpf = "12345678910";
+            f4.DataAdmissao = DateTime.Parse("01/01/2000");
+            f4.Salario = 100.000M;
+            f4.TipoFuncionario = TipoFuncionarioEnum.CLT;
+            lista.Add(f4);
+
+            Funcionario f5 = new Funcionario();
+            f5.Id = 5;
+            f5.Nome = "Neymar aposentado";
+            f5.Cpf = "12345678910";
+            f5.DataAdmissao = DateTime.Parse("01/01/2000");
+            f5.Salario = 100.000M;
+            f5.TipoFuncionario = TipoFuncionarioEnum.CLT;
+            lista.Add(f5);
+
+            Funcionario f6 = new Funcionario();
+            f6.Id = 6;
+            f6.Nome = "Obrigado Aninha <3";
+            f6.Cpf = "12345678910";
+            f6.DataAdmissao = DateTime.Parse("01/01/2000");
+            f6.Salario = 100.000M;
+            f6.TipoFuncionario = TipoFuncionarioEnum.CLT;
+            lista.Add(f6);
+
+        }
     }
+}
